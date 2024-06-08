@@ -1,10 +1,6 @@
 {% extends 'base.html'%}
 
-{% block styles %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'style.css'%}">
-{% endblock %}
-
 {% block content %}
-<h1 class="Header">Yay</h1>
+    <h1 class="container">Hello {{data.username}}</h1>
+    <h2 class="container">Welcome to your {{data.type}}</h2>
 {% endblock %}
