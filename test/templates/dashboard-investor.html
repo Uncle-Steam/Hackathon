@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/db-investor-style.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin=""
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&amp;display=swap"
+            rel="stylesheet"
+        />
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="loader">
+            <h1>Loading<span>....</span></h1>
+        </div>
+        <div class="page-content index-page">
+            <div class="sidebar">
+                <div class="brand">
+                    <i class="fa-solid fa-xmark xmark"></i>
+                    <img
+                        src="{% static 'images/invie-logo.png' %}"
+                        class="app-logo"
+                        alt="App Logo"
+                    />
+                </div>
+                <ul>
+                    <li>
+                        <a href="index.html" class="sidebar-link">
+                            <i class="fa-regular fa-chart-bar fa-fw"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./pages/settings.html" class="sidebar-link">
+                            <i class="fa-solid fa-gear fa-fw"></i>
+                            <span>Conversation</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <main>
+                <div class="header">
+                    <i class="fa-solid fa-bars bar-item"></i>
+                    <a href="" aria-disabled="true"
+                        ><span class="lighter-text">Pages</span> / Profile /</a
+                    >
+
+                    <div class="profile">
+                        <a href="" target="_blank">Logout</a>
+                        <span class="bell"
+                            ><i class="fa-regular fa-bell fa-lg"></i
+                        ></span>
+                        <img
+                            class="avatar-img"
+                            src="{% static 'images/investor-4.jpg' %}"
+                            alt="Avatar image"
+                        />
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="banner">
+                        <img src="{% static 'images/banner.jpg' %}" alt="Banner image" />
+                        <div class="title">
+                            <h2>Dashboard</h2>
+                        </div>
+                        <div class="glass-overlay">
+                            <div class="startup-box">
+                                <img
+                                    class="startup-logo"
+                                    src="{% static 'images/investor-4.jpg' %}"
+                                    alt="Startup logo"
+                                />
+                                <div class="startup-info">
+                                    <p class="startup-name">Nick Daniel</p>
+                                    <p class="startup-foundedyear">
+                                        CEO/ Investor
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-content-boxes">
+                        
+                        <div class="section-box1">
+                            <div class="top-card">
+                                <p>You might be interested in...</p>
+                            </div>
+                            <div class="startup-cards">
+                                <div class="section-header">
+                                    <img
+                                        class="investors-img"
+                                        src="{% static 'images/startup-1.jpg' %}"
+                                        alt="Investor image"
+                                    />
+                                    <p class="section-title">Webby Group</p>
+                                </div>
+                            <div class="horizontal-line"></div>
+
+                                <div class="section-content">
+                                    <p>Industry: <span>Software Company</span></p>
+                                    <p>
+                                        About:
+                                        <span
+                                            >Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Ipsum similique
+                                            tenetur ea fugit! Excepturi pariatur,
+                                            adipisci magni beatae aut
+                                            provident.</span
+                                        >
+                                    </p>
+                                    <p>Tags: <span><a href="#">#IT</a> <a href="#">#tech</a> <a href="#">#consultancy</a></span></p>
+                                </div>
+                            </div>
+
+                            <div class="startup-cards">
+                                <div class="section-header">
+                                    <img
+                                        class="investors-img"
+                                        src="{% static 'images/startup-2.jpg' %}"
+                                        alt="Investor image"
+                                    />
+                                    <p class="section-title">Double Dot</p>
+                                </div>
+                            <div class="horizontal-line"></div>
+
+                                <div class="section-content">
+                                    <p>Industry: <span>Software Company</span></p>
+                                    <p>
+                                        About:
+                                        <span
+                                            >Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Ipsum similique
+                                            tenetur ea fugit! Excepturi pariatur,
+                                            adipisci magni beatae aut
+                                            provident.</span
+                                        >
+                                    </p>
+                                    <p>Tags: <span><a href="#">#software</a> <a href="#">#mobile</a> <a href="#">#app</a></span></p>
+                                </div>
+                            </div>
+
+                            <div class="startup-cards">
+                                <div class="section-header">
+                                    <img
+                                        class="investors-img"
+                                        src="{% static 'images/startup-3.jpg' %}"
+                                        alt="Investor image"
+                                    />
+                                    <p class="section-title">Deriv</p>
+                                </div>
+                            <div class="horizontal-line"></div>
+
+                                <div class="section-content">
+                                    <p>Industry: <span>Financial Services</span></p>
+                                    <p>
+                                        About:
+                                        <span
+                                            >Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Ipsum similique
+                                            tenetur ea fugit! Excepturi pariatur,
+                                            adipisci magni beatae aut
+                                            provident.</span
+                                        >
+                                    </p>
+                                    <p>Tags: <span><a href="#">#finance</a> <a href="#">#trading</a> <a href="#">#innovation</a></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-box2">
+                            <div class="startup-cards">
+                                <div class="section-header">
+                                    <p class="section-title">Recommendations based on these tags</p>
+                                </div>
+
+                                <div class="tag-box">
+                                    <div class="tag">
+                                        <p>tag 1</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>tag 2</p>
+                                    </div>
+                                    <div class="tag">
+                                        <p>tag 3</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

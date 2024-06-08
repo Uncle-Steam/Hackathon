@@ -1,0 +1,44 @@
+{% load static %}
+<!-- HTML -->
+<div class="container">
+  <div class="block-1">
+    <ul>
+      <li>Scalability: {{result1.0}}</li>
+      <li>Market Size: {{result1.1}}</li>
+      <li>Social Cause: {{result1.2}}</li>
+      <li>Comptetitive Landscape: {{result1.3}}</li>
+    </ul>
+    <p>{{result1.4}}</p>
+  </div>
+  <div class="block-2">
+    <section>
+        Suggested User
+    </section>
+    <section>
+      <img src="{% static 'images/investor-1.jpg' %}" alt="Image 1">
+      <p>{{result2.0.0}}</p>
+    </section>
+    <section>
+      <img src="{% static 'images/investor-2.jpg' %}" alt="Image 2">
+      <p>{{result2.1.0}}</p>
+    </section>
+    <section>
+      <img src="{% static 'images/investor-3.jpg' %}" alt="Image 3">
+      <p>{{result2.2.0}}</p>
+    </section>
+    <section>
+      <img src="{% static 'images/investor-4.jpg' %}" alt="Image 4">
+      <p>{{result2.3.0}}</p>
+    </section>
+  </div>
+</div>
+<form action="dashboard" method="get">
+    <input type="hidden" name="about" value="{{ about }}">
+    <input type="hidden" name="industry" value="{{ industry }}">
+    <input type="hidden" name="name" value="{{ name }}">
+    <input type="hidden" name="regisNumber" value="{{ regisNumber }}">
+    <input type="hidden" name="foundedDate" value="{{ foundedDate }}">
+    <input type="hidden" name="social" value="{{ social }}">
+    <input type="hidden" name="result2" value="{{ result2 }}">
+    <input type="submit" value="Go to Next Page">
+</form>

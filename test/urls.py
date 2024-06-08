@@ -6,5 +6,7 @@ urlpatterns = [
     path('index/', views.index, name='site-index'),
     path('login', views.login, name='site-login'),
     path('signup/', views.signup, name='site-signup'),
-    path('signup', views.firstGenerate)
+    path('signup', views.insight),
+    path('dashboard', views.dashboard),
+    path('investor/', views.investor)
 ]
