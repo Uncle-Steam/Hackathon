@@ -1,2 +1,6 @@
-<h1>fesodhgesoghoeisghoiagh0hrghogrsh</h1>
-<h2>balls</h2>
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1 class="container">Hello {{data.username}}</h1>
+    <h2 class="container">Welcome to your {{data.type}}</h2>
+{% endblock %}
