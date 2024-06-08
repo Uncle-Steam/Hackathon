@@ -29,6 +29,14 @@ def about(request):
 
 def index(request):
     context = {
-        'data': index
+        'data': index,
+        'title': "Login"
     }
     return render(request, "index.html", context)
+
+
+def signup(request):
+    context = {
+        'title': "Sign Up"
+    }
+    return render(request, "signup.html", context)
