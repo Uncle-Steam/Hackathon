@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/db-startup-style.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin=""
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&amp;display=swap"
+            rel="stylesheet"
+        />
+        <title>Profile</title>
+    </head>
+    <body>
+        <div class="loader">
+            <h1>Loading<span>....</span></h1>
+        </div>
+        <div class="page-content index-page">
+            <div class="sidebar">
+                <div class="brand">
+                    <i class="fa-solid fa-xmark xmark"></i>
+                    <img
+                        src="{% static 'images/invie-logo.png' %}"
+                        class="app-logo"
+                        alt="App Logo"
+                    />
+                </div>
+                <ul>
+                    <li>
+                        <a href="index.html" class="sidebar-link">
+                            <i class="fa-regular fa-chart-bar fa-fw"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./pages/settings.html" class="sidebar-link">
+                            <i class="fa-solid fa-gear fa-fw"></i>
+                            <span>Conversation</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <main>
+                <div class="header">
+                    <i class="fa-solid fa-bars bar-item"></i>
+                    <a href="" aria-disabled="true"
+                        ><span class="lighter-text">Pages</span> / Profile /</a
+                    >
+
+                    <div class="profile">
+                        <a href="" target="_blank">Logout</a>
+                        <span class="bell"
+                            ><i class="fa-regular fa-bell fa-lg"></i
+                        ></span>
+                        <img
+                            class="avatar-img"
+                            src="{% static 'images/startup-logo.png' %}"
+                            alt="Avatar image"
+                        />
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="banner">
+                        <img src="{% static 'images/banner.jpg' %}" alt="Banner image" />
+                        <div class="title">
+                            <h2>Dashboard</h2>
+                        </div>
+                        <div class="glass-overlay">
+                            <div class="startup-box">
+                                <img
+                                    class="startup-logo"
+                                    src="{% static 'images/startup-logo.png' %}"
+                                    alt="Startup logo"
+                                />
+                                <div class="startup-info">
+                                    <p class="startup-name">{{name}}</p>
+                                    <p class="startup-foundedyear">
+                                        Founded in: 2023
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-content-boxes">
+                        <div class="section-box1">
+                            <div class="section-header">
+                                <p class="section-title">Profile Information</p>
+                                <i class="fa fa-edit edit-icon"></i>
+                            </div>
+                            <div class="horizontal-line"></div>
+                            <div class="section-content">
+                                <p>
+                                    Registration No.: <span>{{regisNumber}}</span>
+                                </p>
+                                <p>Date Founded: <span>{{foundedDate}}</span></p>
+                                <p>Location: <span>USA</span></p>
+                                <p>
+                                    About:
+                                    <span
+                                        >{{about}}</span
+                                    >
+                                </p>
+                                <p>
+                                    Objective:
+                                    <span
+                                        >{{social}}</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                        <div class="section-box2">
+                            <div class="section-header">
+                                <p class="section-title">
+                                    Potential Market Scope
+                                </p>
+                                <p class="send-email-cta">Send All Emails</p>
+                            </div>
+                            <div class="horizontal-line"></div>
+                            <div class="investors-suggestion-col">
+                                <div class="investors-suggestion">
+                                    <img
+                                        class="investors-img"
+                                        src="{% static 'images/investor-1.jpg' %}"
+                                        alt="Investor image"
+                                    />
+                                    <div class="investors-detail">
+                                        <p class="investors-name">Peterson</p>
+                                        <p class="investors-tags">
+                                            {{result.0.1}} Compatibility, user is {{result.0.2}}
+                                        </p>
+                                    </div>
+                                    <i
+                                        class="fa-regular fa-paper-plane send-icon"
+                                    ></i>
+                                </div>
+                                <div class="investors-suggestion">
+                                    <img
+                                        class="investors-img"
+                                        src="{% static 'images/investor-2.jpg' %}"
+                                        alt="Investor image"
+                                    />
+                                    <div class="investors-detail">
+                                        <p class="investors-name">Anne Marie</p>
+                                        <p class="investors-tags">
+                                            {{result.1.1}} Compatibility, user is {{result.1.2}}
+                                        </p>
+                                    </div>
+                                    <i
+                                        class="fa-regular fa-paper-plane send-icon"
+                                    ></i>
+                                </div>
+                            </div>
+                            <div class="investors-suggestion-col">
+                                <div class="investors-suggestion">
+                                    <img
+                                        class="investors-img"
+                                        src="{% static 'images/investor-3.jpg' %}"
+                                        alt="Investor image"
+                                    />
+                                    <div class="investors-detail">
+                                        <p class="investors-name">Ivanna</p>
+                                        <p class="investors-tags">
+                                            {{result.2.1}} Compatibility, user is {{result.2.2}}
+                                        </p>
+                                    </div>
+                                    <i
+                                        class="fa-regular fa-paper-plane send-icon"
+                                    ></i>
+                                </div>
+                                <div class="investors-suggestion">
+                                    <img
+                                        class="investors-img"
+                                        src="{% static 'images/investor-4.jpg' %}"
+                                        alt="Investor image"
+                                    />
+                                    <div class="investors-detail">
+                                        <p class="investors-name">
+                                            Nick Daniel
+                                        </p>
+                                        <p class="investors-tags">
+                                            {{result.3.1}} Compatibility, user is {{result.3.2}}
+                                        </p>
+                                    </div>
+                                    <i
+                                        class="fa-regular fa-paper-plane send-icon"
+                                    ></i>
+                                </div>
+                            </div>
+                            <div class="down-icon-box">
+                                <i
+                                    class="fa-solid fa-chevron-down down-icon"
+                                ></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

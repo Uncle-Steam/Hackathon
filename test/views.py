@@ -39,10 +39,12 @@ def login(request):
     else:
         return render(request, 'index.html')
 
+def sortUser(arrayUser):
+    sorted_arrayUser = sorted(arrayUser, key=lambda x: int(x[1].replace('%', '')), reverse=True)
+    return sorted_arrayUser
 
 def firstGenerate(request):
     about = request.GET['about']
-    objective = request.GET['objective']
     industry = request.GET['industry']
     name = request.GET['startup__name']
     regisNumber = request.GET['reg__no']
@@ -57,11 +59,36 @@ def firstGenerate(request):
         num += 1
     
     prompt = f"""You are analyzing a startup company and how likely they are to attract certain investor profiles based on their 
-    About Us, objective, industry, name and their social cause. Here is their profile About Us:{about}, Objective:{objective}, Industry:{industry}, 
+    About Us, objective, industry, name and their social cause. Here is their profile About Us:{about}, Industry:{industry}, 
     Name:{name}, Social Cause:{social}. Make a compatibility analysis with the user profile provided which is: {concactenate}. Make the result in 
-    this format and do it for all user, use a csv format output that only includes user number, compatibility percentage and a reasoning less than 15 words"""
+    this format and do it for all user, use a csv format output that only includes user number, compatibility percentage and a reasoning less than 15 words
+    do not have any preface sentences, and separate each user analysis with a comma instead of a space"""
     
-    result = ai.assistant(prompt)
+    unSplit = ai.assistant(prompt)
+    array = unSplit.split(",")
 
-    return render(request, 'test.html', {'result': result})
+    textList = []
+    text = []
+    for i, item in enumerate(array):
+        item = item.replace("\n", "")
+        if (i + 1) % 3 != 0:
+            text.append(item)
+        else:
+            text.append(item)
+            textList.append(text)
+            text = []
+    
+    sortedResult = sortUser(textList)
+
+    context = {
+            'about': about,
+            'industry': industry,
+            'name': name,
+            'regisNumber': regisNumber,
+            'foundedDate': foundedDate,
+            'social': social,
+            'result': sortedResult
+        }
+
+    return render(request, 'dashboard-startup.html', context)
 
