@@ -22,6 +22,7 @@ def index(request):
 
 
 def login(request):
+<<<<<<< HEAD
     
     defaultUser = "Tritop21"
     defaultPass = "password123"
@@ -55,3 +56,12 @@ def firstGenerate(request):
     About Us, objective, industry, name and their social cause. Here is their profile About Us:{about}, Objective:{objective}, Industry:{industry}, 
     Name:{name}, Social Cause:{social}. Make a compatibility analysis with the user profile provided which is: {concactenate}"
     
+=======
+    return render(request, 'signup.html')
+
+def signup(request):
+    context = {
+        'title': "Sign Up"
+    }
+    return render(request, "signup.html", context)
+>>>>>>> cae682711b303b118d48a2988521f36c655a026a
