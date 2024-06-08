@@ -5,7 +5,7 @@
     <img src="{% static 'img/login-bg.jpg' %}" alt="image" class="login__bg" />
 
     {% comment %} THIS IS A FORM {% endcomment %}
-    <form action="" class="login__form">
+    <form action="login" class="login__form">
         <h1 class="login__title">Login</h1>
 
         <div class="login__inputs">
@@ -15,6 +15,7 @@
                     placeholder="Username"
                     required
                     class="login__input"
+                    name="username"
                 />
                 <i class="ri-mail-fill"></i>
             </div>
@@ -25,6 +26,7 @@
                     placeholder="Password"
                     required
                     class="login__input"
+                    name="password"
                 />
                 <i class="ri-lock-2-fill"></i>
             </div>
@@ -45,7 +47,7 @@
             <a href="#" class="login__forgot">Forgot Password?</a>
         </div>
 
-        <button type="submit" class="login__button">Login</button>
+        <input type="submit" class="login__button">
 
         <div class="login__register">
             Don't have an account?
