@@ -42,4 +42,15 @@ def signup(request):
     return render(request, "signup.html", context)
 
 def login(request):
-    return render(request, 'signup.html')
+    
+    defaultUser = "Tritop21"
+    defaultPass = "password123"
+    
+    user = request.GET['username']
+    password = request.GET['password']
+    
+    if user == defaultUser and password == defaultPass:
+        return render(request, 'signup.html')
+    else:
+        return render(request, 'index.html')
+    
