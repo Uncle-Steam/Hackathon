@@ -1,0 +1,104 @@
+{% extends 'base.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block content %}
+<div class="login">
+    <img src="{% static 'img/login-bg.jpg' %}" alt="image" class="login__bg" />
+
+    {% comment %} THIS IS A FORM {% endcomment %}
+    <form action="signup" class="signup__form">
+        <img
+            src="{% static 'img/login-invie-logo.png' %}"
+            alt="image"
+            class="app__logo"
+        />
+        
+        <h1 class="login__title">SIGN UP</h1>
+        <div class="signup__inputs">
+            <div class="signup__column">
+                <div class="signup__box">
+                    <label for="startup__name">Startup Name</label>
+                    <input 
+                        type="text" 
+                        required
+                        class="signup__input"
+                        name="startup__name"
+                    />
+                </div>
+
+                <div class="signup__box">
+                    <label for="reg__no">Registration No.</label>
+                    <input 
+                        type="text" 
+                        required
+                        class="signup__input"
+                        name="reg__no"
+                    />
+                </div>
+            </div>
+
+            <div class="signup__column">
+                <div class="signup__box">
+                    <label for="found__date">Date Founded</label>
+                    <input 
+                        type="text" 
+                        required
+                        class="signup__input"
+                        name="found__date"
+                    />
+                </div>
+
+                <div class="signup__box">
+                    <label for="about">About</label>
+                    <input
+                        type="text"
+                        required
+                        class="signup__input"
+                        name="about"
+                    />
+                </div>
+            </div>
+
+            <div class="signup__column">
+                <div class="signup__box">
+                    <label for="company__location">Location</label>
+                    <input
+                        type="text"
+                        required
+                        class="signup__input"
+                        name="company__location"
+                    />
+                </div>
+
+                <div class="signup__box">
+                    <label for="objective">Objective</label>
+                    <input
+                        type="text"
+                        required
+                        class="signup__input"
+                        name="company__name"
+                    />
+                </div>
+            </div>
+
+        <div class="signup__check">
+            <div class="signup__check-box">
+                <input
+                    type="checkbox"
+                    class="login__check-input"
+                    id="terms"
+                />
+                <label for="terms" class="login__check-label"
+                    >Terms and Conditions</label
+                >
+            </div>
+        </div>
+
+        <input type="submit" class="login__button" />
+
+        <div class="login__register">
+            Have an existing account?
+            <a href="#">Login</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
