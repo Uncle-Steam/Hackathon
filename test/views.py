@@ -3,5 +3,23 @@ from django.http import HttpResponse
 # Create your views here.
 #request -> response (handler)
 
-def hello(request):
-    return render(request, "test.html")
+user = {
+        'username': 'Tritop21',
+        'type': 'Startup'
+    }
+
+abouts = {
+    'cocreators': ['Ananda', 'Averil', 'Janson', 'Weipin', 'Winsen']
+}
+
+def home(request):
+    context = {
+        'data': user
+    }
+    return render(request, "test.html", context)
+
+def about(request):
+    context = {
+        'data': abouts
+    }
+    return render(request, "about.html", context)
