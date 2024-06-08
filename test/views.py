@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import ai
-import trialData
+from test import ai
+from test import trialData
 
 user = {
     'username': 'Tritop21',
@@ -20,13 +20,14 @@ def index(request):
     }
     return render(request, "index.html", context)
 
+def signup(request):
+    context = {
+        'title': "Sign Up"
+    }
+    return render(request, "signup.html", context)
 
 def login(request):
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d1abf1261d60d0d04369a9d16c633bb510e7c152
-    
+
     defaultUser = "Tritop21"
     defaultPass = "password123"
     
@@ -37,19 +38,16 @@ def login(request):
         return render(request, 'signup.html')
     else:
         return render(request, 'index.html')
-<<<<<<< HEAD
-    
-=======
-    
+
 
 def firstGenerate(request):
     about = request.GET['about']
     objective = request.GET['objective']
     industry = request.GET['industry']
-    name = request.GET['name']
-    regisNumber = request.GET['regisNumber']
-    foundedDate = request.GET['foundedDate']
-    social = request.GET['social']
+    name = request.GET['startup__name']
+    regisNumber = request.GET['reg__no']
+    foundedDate = request.GET['found__date']
+    social = request.GET['objective']
     
     concactenate = ""
     num = 1
@@ -58,17 +56,11 @@ def firstGenerate(request):
         concactenate += f"User {num} is planning to invest in {i['planning']}, is interested in {i['industry']} sectors, and follows {i['followed']} on LinkedIn.\n"
         num += 1
     
-    prompt = f"You are analyzing a startup company and how likely they are to attract certain investor profiles based on their 
+    prompt = f"""You are analyzing a startup company and how likely they are to attract certain investor profiles based on their 
     About Us, objective, industry, name and their social cause. Here is their profile About Us:{about}, Objective:{objective}, Industry:{industry}, 
-    Name:{name}, Social Cause:{social}. Make a compatibility analysis with the user profile provided which is: {concactenate}"
+    Name:{name}, Social Cause:{social}. Make a compatibility analysis with the user profile provided which is: {concactenate}. Make the result"""
     
-=======
-    return render(request, 'signup.html')
+    result = ai.assistant(prompt)
 
-def signup(request):
-    context = {
-        'title': "Sign Up"
-    }
-    return render(request, "signup.html", context)
->>>>>>> cae682711b303b118d48a2988521f36c655a026a
->>>>>>> d1abf1261d60d0d04369a9d16c633bb510e7c152
+    return render(request, 'test.html', {'result': result})
+

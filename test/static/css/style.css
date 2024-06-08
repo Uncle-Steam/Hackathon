@@ -121,7 +121,7 @@ img {
 .login__check,
 .login__check-box {
     display: flex;
-    justify-content: space-between;
+    justify-content: gap;
     align-items: center
 }
 
