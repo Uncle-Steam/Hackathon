@@ -6,8 +6,12 @@
 
     {% comment %} THIS IS A FORM {% endcomment %}
     <form action="login" class="login__form">
-        <h1 class="login__title">Login</h1>
-
+        <img
+            src="{% static 'img/login-invie-logo.png' %}"
+            alt="image"
+            class="app__logo"
+        />
+        <h1 class="login__title">LOGIN</h1>
         <div class="login__inputs">
             <div class="login__box">
                 <input
@@ -47,11 +51,11 @@
             <a href="#" class="login__forgot">Forgot Password?</a>
         </div>
 
-        <input type="submit" class="login__button">
+        <input type="submit" class="login__button" />
 
         <div class="login__register">
             Don't have an account?
-            <a href="{% url 'site-signup' %}">Register</a>
+            <a href="#">Register</a>
         </div>
     </form>
 </div>

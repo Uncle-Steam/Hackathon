@@ -67,10 +67,15 @@ img {
     backdrop-filter: blur(16px);
 }
 
+.app__logo {
+    height: 2rem;
+    margin: 0 auto 1.2rem;
+}
+
 .login__title {
     text-align: center;
-    font-size: var(--h1-font-size);
-    margin-bottom: 1.25rem;
+    font-size: var(--normal-font-size);
+    margin-bottom: 0.6rem;
 }
 
 .login__inputs,
