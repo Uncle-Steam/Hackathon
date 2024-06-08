@@ -13,20 +13,6 @@ abouts = {
 }
 
 
-def home(request):
-    context = {
-        'data': user
-    }
-    return render(request, "test.html", context)
-
-
-def about(request):
-    context = {
-        'data': abouts
-    }
-    return render(request, "about.html", context)
-
-
 def index(request):
     context = {
         'data': index,
@@ -34,12 +20,6 @@ def index(request):
     }
     return render(request, "index.html", context)
 
-
-def signup(request):
-    context = {
-        'title': "Sign Up"
-    }
-    return render(request, "signup.html", context)
 
 def login(request):
     return render(request, 'signup.html')
