@@ -1,6 +1,22 @@
 {% extends 'base.html'%}
 
+{% block style %}
+<link rel="stylesheet" href="{% static 'style.css'%}">
+{% endblock%}
+
 {% block content %}
     <h1 class="container">Hello {{data.username}}</h1>
     <h2 class="container">Welcome to your {{data.type}}</h2>
+    <div>
+        {% for type in types %}
+        <h2>{{type.id}} -- <a href="{% url 'site-about' type.id %}">{{type.name}}</a></h2>
+        {% endfor %}
+    </div>
+    <div>
+        <form action="add">
+            Enter first number : <input type="text" name="num1"><br>
+            Enter second number: <input type="text" name="num2"><br>
+            <input type="submit">
+        </form>
+    </div>
 {% endblock %}
