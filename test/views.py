@@ -22,17 +22,13 @@ def index(request):
 
 
 def login(request):
+    defaultUser = "Tritop21"
+    defaultPass = "password123"
 
+    user = request.GET['username']
+    password = request.GET['password']
 
-<< << << < HEAD
-
-defaultUser = "Tritop21"
-defaultPass = "password123"
-
- user = request.GET['username']
-  password = request.GET['password']
-
-   if user == defaultUser and password == defaultPass:
+    if user == defaultUser and password == defaultPass:
         return render(request, 'signup.html')
     else:
         return render(request, 'index.html')
@@ -57,10 +53,7 @@ def firstGenerate(request):
     prompt = f"You are analyzing a startup company and how likely they are to attract certain investor profiles based on their
     About Us, objective, industry, name and their social cause. Here is their profile About Us: {about}, Objective: {objective}, Industry: {industry},
     Name: {name}, Social Cause: {social}. Make a compatibility analysis with the user profile provided which is : {concactenate}"
-
-
-== == == =
-return render(request, 'signup.html')
+    return render(request, 'signup.html')
 
 
 def signup(request):
@@ -68,6 +61,3 @@ def signup(request):
         'title': "Sign Up"
     }
     return render(request, "signup.html", context)
-
-
->>>>>> > cae682711b303b118d48a2988521f36c655a026a
