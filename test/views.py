@@ -58,7 +58,8 @@ def firstGenerate(request):
     
     prompt = f"""You are analyzing a startup company and how likely they are to attract certain investor profiles based on their 
     About Us, objective, industry, name and their social cause. Here is their profile About Us:{about}, Objective:{objective}, Industry:{industry}, 
-    Name:{name}, Social Cause:{social}. Make a compatibility analysis with the user profile provided which is: {concactenate}. Make the result"""
+    Name:{name}, Social Cause:{social}. Make a compatibility analysis with the user profile provided which is: {concactenate}. Make the result in 
+    this format and do it for all user, use a csv format output that only includes user number, compatibility percentage and a reasoning less than 15 words"""
     
     result = ai.assistant(prompt)
 
