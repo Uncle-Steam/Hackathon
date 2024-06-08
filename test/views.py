@@ -23,3 +23,10 @@ def index(request):
 
 def login(request):
     return render(request, 'signup.html')
+
+
+def signup(request):
+    context = {
+        'title': "Sign Up"
+    }
+    return render(request, "signup.html", context)
