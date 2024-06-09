@@ -6,7 +6,7 @@ brt = boto3.client(service_name='bedrock-runtime')
 def assistant(prompt):
   body = json.dumps({
       'prompt': '\n\nHuman:' + prompt + '\n\nAssistant:',
-      'max_tokens_to_sample': 400
+      'max_tokens_to_sample': 1000
   })
                     
   response = brt.invoke_model_with_response_stream(
